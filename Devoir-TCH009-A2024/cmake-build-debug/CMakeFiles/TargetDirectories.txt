@@ -1,0 +1,3 @@
+C:/Users/treot/CLionProjects/Devoir-TCH009-A2024/cmake-build-debug/CMakeFiles/Devoir_A2024_TCH009.dir
+C:/Users/treot/CLionProjects/Devoir-TCH009-A2024/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/treot/CLionProjects/Devoir-TCH009-A2024/cmake-build-debug/CMakeFiles/rebuild_cache.dir
