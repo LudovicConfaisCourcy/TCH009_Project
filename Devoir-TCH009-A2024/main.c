@@ -62,12 +62,13 @@ int charger(double tab_latitudes[], double tab_longitudes[], double tab_altitude
 
 	char nom_fichier[LONGUEUR_MAX_NOM_FICHIER] = {};
 
-	printf("Nom du fichier: ");
+	printf("\nNom du fichier: ");
 	scanf("%s",nom_fichier);
 	printf("Chargement du fichier %s...",nom_fichier);
 
 	int taille1 = lire_donnees_gps(nom_fichier,tab_latitudes,tab_longitudes,tab_altitudes,taille_max);
 
+	printf("\n");
 	return taille1;
 	}
 
@@ -90,13 +91,14 @@ int charger(double tab_latitudes[], double tab_longitudes[], double tab_altitude
 */
 
 void afficher(double tab_latitudes[], double tab_longitudes[], double tab_altitudes[], int taille) {
-	printf("Donnees en Memoire:\n");
+	printf("\nDonnees en Memoire:\n");
 	printf("Index\tLatitude   Longitude %9-s\n","Altitude");
 	if(taille > 0) {
 		for (int i = 0; i < taille; i++) {
 			printf("%7-d %-9lf %-9lf %9-lf\n", i, tab_latitudes[i], tab_longitudes[i], tab_altitudes[i]);
 		}
 	}
+	printf("\n");
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------
@@ -122,7 +124,7 @@ void analyser(double tab_latitudes[], double tab_longitudes[], double tab_altitu
 	double minimum = 0;
 	double maximum = 0;
 
-	printf("Analyse de la trace...\n\n");
+	printf("\nAnalyse de la trace...\n\n");
 
 	minimum_tableau(tab_altitudes, taille, &minimum);
 	maximum_tableau(tab_altitudes, taille, &maximum);
@@ -152,12 +154,12 @@ void analyser(double tab_latitudes[], double tab_longitudes[], double tab_altitu
 void calculer(double tab_latitudes[], double tab_longitudes[], double tab_altitudes[], int taille) {
 	//adjust pente_maximale to give right value
 	int taille_fenetre;
-	
-	printf(" calcul de la pente maximale...\n\n");
+
+	printf("\n calcul de la pente maximale...\n\n");
 	printf("Nombre de points pour calcul de pente moyenne: ");
 	scanf("%d",&taille_fenetre);
-	
-	printf("\n\tPente Maximale: \t %lf %%",pente_maximale(tab_latitudes, tab_longitudes, tab_altitudes, taille,taille_fenetre));
+
+	printf("\n\tPente Maximale: \t %lf %%\n", pente_maximale(tab_latitudes, tab_longitudes, tab_altitudes, taille,taille_fenetre));
 }
 
 // Programme principal
