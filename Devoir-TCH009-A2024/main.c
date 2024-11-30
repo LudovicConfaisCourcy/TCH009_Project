@@ -150,7 +150,8 @@ void analyser(double tab_latitudes[], double tab_longitudes[], double tab_altitu
 */
 
 void calculer(double tab_latitudes[], double tab_longitudes[], double tab_altitudes[], int taille) {
-
+	//format + print
+	pente_maximale(tab_latitudes, tab_longitudes, tab_altitudes, taille,5);
 }
 
 // Programme principal
@@ -182,8 +183,7 @@ int main()
 		}
 
 		case 4: {
-			calculer(tab_latitudes, tab_longitudes, tab_altitudes, LONGUEUR_MAX_LIGNE);
-			printf("option 4");
+			calculer(tab_latitudes, tab_longitudes, tab_altitudes, taille1);
 			break;
 		}
 
@@ -193,7 +193,7 @@ int main()
 		}
 
 		default: {
-			printf("Choix Invalid");
+			printf("Choix Invalide");
 		}
 	}
         }
