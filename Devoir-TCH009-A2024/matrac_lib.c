@@ -91,17 +91,15 @@ double distance_entre_2_points(double latitude1,
 							   double altidute1,
 							   double altidute2){
 
-	double delta_lat= (convertir_en_radian(latitude2)-convertir_en_radian(latitude1))/2;
+	double delta_lat= convertir_en_radian(latitude2-latitude1)/2;
 	double lat1 = convertir_en_radian(latitude1);
 	double lat2 = convertir_en_radian(latitude2);
 	double delta_long = convertir_en_radian((longitude2-longitude1))/2;
 
 	double d = RAYON_TERRE * 2 * asin(sqrt(pow(sin(delta_lat),2) + (cos(lat1)) * cos(lat2) * pow(sin(delta_long), 2)));
-	double d_rot = sqrt(pow(d,2) + pow((altidute2 - altidute1)/1000,2));
+	double d_tot = sqrt(pow(d,2) + pow((altidute2 - altidute1)/1000,2));
 
-	//double d_tot = sqrt(pow(d,2) + pow(d_rot,2))/1000;
-
-	return d_rot;
+	return d_tot;
 }
 
 void afficher_tableau(double tableau[], int nb_valeurs) {
@@ -171,4 +169,16 @@ double ascension(double tab_altitudes[], int taille) {
 		}
 	}
 	return tot;
+}
+
+double pente_maximale(double tab_latitudes[], double tab_longitudes[], double tab_altitudes[], int taille, int taille_fenetre) {
+ // pas fini
+	int i;
+	double pente = 0;
+
+	for(i = 0; i < taille; i++) {
+		pente = (tab_altitudes[i+1]-tab_altitudes[i])/distance_entre_2_points(tab_latitudes[i],tab_latitudes[i+1],tab_longitudes[i],tab_longitudes[i+1],tab_altitudes[i],tab_altitudes[i]);
+	}
+
+	return pente;
 }
