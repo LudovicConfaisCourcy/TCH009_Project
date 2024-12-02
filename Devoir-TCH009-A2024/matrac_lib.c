@@ -186,7 +186,7 @@ double pente_maximale(double tab_latitudes[], double tab_longitudes[], double ta
 		double distance = distance_totale(tab_latitudes, tab_longitudes, tab_altitudes, taille, debut, fin);
 
 		if (distance > 0) {
-			double pente = (tab_altitudes[fin]-tab_altitudes[debut]) / ((distance) * 1000);
+			double pente = (tab_altitudes[fin-1]-tab_altitudes[debut]) / ((distance) * 1000);
 			if (pente > pente_max) {
 				pente_max = pente;
 			}
