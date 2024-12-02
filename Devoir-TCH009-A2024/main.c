@@ -152,7 +152,6 @@ void analyser(double tab_latitudes[], double tab_longitudes[], double tab_altitu
 */
 
 void calculer(double tab_latitudes[], double tab_longitudes[], double tab_altitudes[], int taille) {
-	//adjust pente_maximale to give right value
 	int taille_fenetre;
 
 	printf("\n calcul de la pente maximale...\n\n");
