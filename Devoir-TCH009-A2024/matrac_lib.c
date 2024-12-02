@@ -172,13 +172,26 @@ double ascension(double tab_altitudes[], int taille) {
 }
 
 double pente_maximale(double tab_latitudes[], double tab_longitudes[], double tab_altitudes[], int taille, int taille_fenetre) {
- // pas fini
-	int i;
-	double pente = 0;
 
-	for(i = 0; i < taille; i++) {
-		pente = (tab_altitudes[i+1]-tab_altitudes[i])/distance_entre_2_points(tab_latitudes[i],tab_latitudes[i+1],tab_longitudes[i],tab_longitudes[i+1],tab_altitudes[i],tab_altitudes[i]);
+	if (taille_fenetre <= 0 || taille <=  taille_fenetre*2) {
+		return 0.0;
 	}
 
-	return pente;
+	double pente_max = 0.0;
+	for (int i = taille_fenetre; i < taille - taille_fenetre; i++) {
+
+		int debut = i - taille_fenetre;
+		int fin = i + taille_fenetre;
+
+		double distance = distance_totale(tab_latitudes, tab_longitudes, tab_altitudes, taille, debut, fin);
+
+		if (distance > 0) {
+			double pente = (tab_altitudes[fin]-tab_altitudes[debut]) / ((distance) * 1000);
+			if (pente > pente_max) {
+				pente_max = pente;
+			}
+		}
+	}
+
+	return pente_max*100;
 }
