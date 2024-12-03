@@ -158,7 +158,7 @@ void calculer(double tab_latitudes[], double tab_longitudes[], double tab_altitu
 	printf("Nombre de points pour calcul de pente moyenne: ");
 	scanf("%d",&taille_fenetre);
 
-	printf("\n\tPente Maximale: \t %lf %%\n", pente_maximale(tab_latitudes, tab_longitudes, tab_altitudes, taille,taille_fenetre));
+	printf("\n\tPente Maximale: \t %.3lf %%\n", pente_maximale(tab_latitudes, tab_longitudes, tab_altitudes, taille,taille_fenetre));
 }
 
 // Programme principal
