@@ -92,10 +92,10 @@ int charger(double tab_latitudes[], double tab_longitudes[], double tab_altitude
 
 void afficher(double tab_latitudes[], double tab_longitudes[], double tab_altitudes[], int taille) {
 	printf("\nDonnees en Memoire:\n");
-	printf("Index\tLatitude   Longitude %9-s\n","Altitude");
+	printf("Index\tLatitude   Longitude  %s\n","Altitude");
 	if(taille > 0) {
 		for (int i = 0; i < taille; i++) {
-			printf("%7-d %-9lf %-9lf %9-lf\n", i, tab_latitudes[i], tab_longitudes[i], tab_altitudes[i]);
+			printf("%7-d %-9lf %-9lf %-3lf\n", i, tab_latitudes[i], tab_longitudes[i], tab_altitudes[i]);
 		}
 	}
 	printf("\n");
